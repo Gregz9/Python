@@ -1,0 +1,331 @@
+2021-11-19 11:05:38,053: pressedKey.up
+2021-11-19 11:05:38,112: released Key.up
+2021-11-19 11:05:40,794: pressedKey.down
+2021-11-19 11:05:40,887: released Key.down
+2021-11-19 11:05:41,684: pressedKey.right
+2021-11-19 11:05:41,743: released Key.right
+2021-11-19 11:05:41,928: pressedKey.up
+2021-11-19 11:05:42,021: released Key.up
+2021-11-19 11:05:42,180: pressedKey.left
+2021-11-19 11:05:42,298: released Key.left
+2021-11-19 11:05:42,817: pressedKey.ctrl_l
+2021-11-19 11:05:42,951: pressed'\x03'
+2021-11-19 11:05:43,045: released '\x03'
+2021-11-19 11:05:43,137: released Key.ctrl_l
+2021-11-19 11:05:44,218: pressedKey.ctrl_l
+2021-11-19 11:05:44,344: pressed'\x03'
+2021-11-19 11:05:44,454: released Key.ctrl_l
+2021-11-19 11:05:44,463: released 'c'
+2021-11-19 11:07:09,234: pressedKey.up
+2021-11-19 11:07:09,310: released Key.up
+2021-11-19 11:07:13,925: pressedKey.down
+2021-11-19 11:07:14,043: released Key.down
+2021-11-19 11:07:14,286: pressedKey.up
+2021-11-19 11:07:14,354: released Key.up
+2021-11-19 11:07:15,099: pressedKey.left
+2021-11-19 11:07:15,175: pressedKey.up
+2021-11-19 11:07:15,276: pressedKey.right
+2021-11-19 11:07:15,318: released Key.up
+2021-11-19 11:07:15,462: released Key.left
+2021-11-19 11:07:15,496: pressedKey.up
+2021-11-19 11:07:15,631: pressedKey.down
+2021-11-19 11:07:15,707: released Key.down
+2021-11-19 11:07:15,716: released Key.right
+2021-11-19 11:07:15,733: released Key.up
+2021-11-19 11:07:15,743: pressedKey.left
+2021-11-19 11:07:15,886: released Key.left
+2021-11-19 11:07:16,347: pressedKey.down
+2021-11-19 11:07:16,507: released Key.down
+2021-11-19 11:07:16,514: pressedKey.right
+2021-11-19 11:07:16,642: pressedKey.up
+2021-11-19 11:07:16,685: released Key.right
+2021-11-19 11:07:16,768: pressedKey.left
+2021-11-19 11:07:16,795: released Key.up
+2021-11-19 11:07:16,912: pressedKey.right
+2021-11-19 11:07:16,946: released Key.left
+2021-11-19 11:07:16,997: pressedKey.down
+2021-11-19 11:07:17,031: released Key.right
+2021-11-19 11:07:17,099: released Key.down
+2021-11-19 11:07:17,928: pressedKey.right
+2021-11-19 11:07:18,046: pressedKey.up
+2021-11-19 11:07:18,080: released Key.right
+2021-11-19 11:07:18,190: pressedKey.left
+2021-11-19 11:07:18,215: released Key.up
+2021-11-19 11:07:18,400: released Key.left
+2021-11-19 11:07:18,477: pressedKey.down
+2021-11-19 11:07:18,611: released Key.down
+2021-11-19 11:07:18,730: pressedKey.right
+2021-11-19 11:07:18,798: pressedKey.up
+2021-11-19 11:07:18,824: released Key.right
+2021-11-19 11:07:18,908: pressedKey.left
+2021-11-19 11:07:18,942: released Key.up
+2021-11-19 11:07:19,044: released Key.left
+2021-11-19 11:07:28,341: pressedKey.up
+2021-11-19 11:07:28,375: released Key.up
+2021-11-19 11:07:28,510: pressedKey.right
+2021-11-19 11:07:28,678: pressedKey.left
+2021-11-19 11:07:28,704: released Key.right
+2021-11-19 11:07:28,755: pressedKey.right
+2021-11-19 11:07:28,773: released Key.left
+2021-11-19 11:07:28,832: pressedKey.up
+2021-11-19 11:07:28,875: released Key.right
+2021-11-19 11:07:28,934: released Key.up
+2021-11-19 11:07:29,077: pressedKey.ctrl_l
+2021-11-19 11:07:29,305: pressed'\x03'
+2021-11-19 11:07:29,397: released '\x03'
+2021-11-19 11:07:29,464: released Key.ctrl_l
+2021-11-19 11:08:26,300: released Key.enter
+2021-11-19 11:08:26,860: pressedKey.up
+2021-11-19 11:08:26,978: released Key.up
+2021-11-19 11:08:27,797: pressedKey.down
+2021-11-19 11:08:27,907: released Key.down
+2021-11-19 11:08:28,151: pressedKey.up
+2021-11-19 11:08:28,227: released Key.up
+2021-11-19 11:08:28,371: pressedKey.right
+2021-11-19 11:08:28,480: released Key.right
+2021-11-19 11:08:28,590: pressedKey.up
+2021-11-19 11:08:28,699: released Key.up
+2021-11-19 11:08:28,801: pressedKey.left
+2021-11-19 11:08:28,919: released Key.left
+2021-11-19 11:08:28,954: pressedKey.right
+2021-11-19 11:08:29,113: pressedKey.down
+2021-11-19 11:08:29,147: released Key.right
+2021-11-19 11:08:29,249: released Key.down
+2021-11-19 11:08:29,284: pressedKey.left
+2021-11-19 11:08:29,326: released Key.left
+2021-11-19 11:08:29,361: pressedKey.up
+2021-11-19 11:08:29,371: pressedKey.right
+2021-11-19 11:08:29,413: released Key.right
+2021-11-19 11:08:29,498: pressedKey.left
+2021-11-19 11:08:29,507: released Key.up
+2021-11-19 11:08:29,600: released Key.left
+2021-11-19 11:08:29,609: pressedKey.right
+2021-11-19 11:08:29,652: pressedKey.up
+2021-11-19 11:08:29,719: released Key.up
+2021-11-19 11:08:29,737: released Key.right
+2021-11-19 11:08:29,756: pressedKey.left
+2021-11-19 11:08:29,832: released Key.left
+2021-11-19 11:08:29,859: pressedKey.right
+2021-11-19 11:08:29,876: pressedKey.up
+2021-11-19 11:08:29,936: released Key.right
+2021-11-19 11:08:29,979: pressedKey.left
+2021-11-19 11:08:30,013: released Key.up
+2021-11-19 11:08:30,082: released Key.left
+2021-11-19 11:08:30,350: pressedKey.down
+2021-11-19 11:08:30,426: released Key.down
+2021-11-19 11:08:30,687: pressedKey.up
+2021-11-19 11:08:30,755: released Key.up
+2021-11-19 11:08:30,864: pressedKey.left
+2021-11-19 11:08:30,974: released Key.left
+2021-11-19 11:08:30,991: pressedKey.right
+2021-11-19 11:08:31,026: pressedKey.up
+2021-11-19 11:08:31,078: released Key.right
+2021-11-19 11:08:31,111: released Key.up
+2021-11-19 11:08:31,129: pressedKey.left
+2021-11-19 11:08:31,138: released Key.left
+2021-11-19 11:08:31,248: pressedKey.ctrl_l
+2021-11-19 11:08:31,383: pressed'\x03'
+2021-11-19 11:08:31,483: released '\x03'
+2021-11-19 11:08:31,493: released Key.ctrl_l
+2021-11-19 11:08:34,509: pressedKey.delete
+2021-11-19 11:08:34,610: released Key.delete
+2021-11-19 11:08:48,711: pressedKey.up
+2021-11-19 11:08:48,720: pressedKey.left
+2021-11-19 11:08:48,746: released Key.up
+2021-11-19 11:08:48,830: pressedKey.right
+2021-11-19 11:08:48,847: pressedKey.up
+2021-11-19 11:08:48,857: released Key.left
+2021-11-19 11:08:48,916: released Key.right
+2021-11-19 11:08:48,934: pressedKey.left
+2021-11-19 11:08:49,019: pressedKey.right
+2021-11-19 11:08:49,053: released Key.left
+2021-11-19 11:08:49,129: released Key.right
+2021-11-19 11:08:49,146: pressedKey.left
+2021-11-19 11:08:49,215: pressedKey.right
+2021-11-19 11:08:49,240: released Key.left
+2021-11-19 11:08:49,316: pressedKey.left
+2021-11-19 11:08:49,326: released Key.right
+2021-11-19 11:08:49,360: released Key.up
+2021-11-19 11:08:49,369: pressedKey.up
+2021-11-19 11:08:49,403: released Key.left
+2021-11-19 11:08:49,420: pressedKey.right
+2021-11-19 11:08:49,497: released Key.right
+2021-11-19 11:08:49,506: pressedKey.left
+2021-11-19 11:08:49,524: released Key.up
+2021-11-19 11:08:49,608: pressedKey.right
+2021-11-19 11:08:49,651: released Key.left
+2021-11-19 11:08:49,710: released Key.right
+2021-11-19 11:08:49,727: pressedKey.down
+2021-11-19 11:08:49,779: pressedKey.left
+2021-11-19 11:08:49,797: released Key.down
+2021-11-19 11:08:49,890: released Key.left
+2021-11-19 11:08:49,908: pressedKey.right
+2021-11-19 11:08:49,917: pressedKey.up
+2021-11-19 11:08:49,968: released Key.right
+2021-11-19 11:08:50,011: pressedKey.left
+2021-11-19 11:08:50,045: released Key.up
+2021-11-19 11:08:50,097: pressedKey.right
+2021-11-19 11:08:50,106: released Key.left
+2021-11-19 11:08:50,115: pressedKey.up
+2021-11-19 11:08:50,184: released Key.right
+2021-11-19 11:08:50,194: pressedKey.left
+2021-11-19 11:08:50,211: released Key.up
+2021-11-19 11:08:50,296: pressedKey.right
+2021-11-19 11:08:50,313: released Key.left
+2021-11-19 11:08:50,339: pressedKey.down
+2021-11-19 11:08:50,382: released Key.right
+2021-11-19 11:08:50,433: released Key.down
+2021-11-19 11:08:50,460: pressedKey.left
+2021-11-19 11:08:50,511: released Key.left
+2021-11-19 11:08:50,529: pressedKey.right
+2021-11-19 11:08:50,555: pressedKey.up
+2021-11-19 11:08:50,606: released Key.right
+2021-11-19 11:08:50,640: pressedKey.left
+2021-11-19 11:08:50,649: released Key.up
+2021-11-19 11:08:50,725: released Key.left
+2021-11-19 11:08:50,743: pressedKey.right
+2021-11-19 11:08:50,811: released Key.right
+2021-11-19 11:08:51,020: pressedKey.ctrl_l
+2021-11-19 11:08:51,381: pressed'\x03'
+2021-11-19 11:08:51,894: pressed'\x03'
+2021-11-19 11:08:51,925: pressed'\x03'
+2021-11-19 11:08:51,956: pressed'\x03'
+2021-11-19 11:08:51,988: pressed'\x03'
+2021-11-19 11:08:52,020: pressed'\x03'
+2021-11-19 11:08:52,052: pressed'\x03'
+2021-11-19 11:08:52,084: pressed'\x03'
+2021-11-19 11:08:52,116: pressed'\x03'
+2021-11-19 11:08:52,147: pressed'\x03'
+2021-11-19 11:08:52,178: pressed'\x03'
+2021-11-19 11:08:52,210: pressed'\x03'
+2021-11-19 11:08:52,258: pressed'\x03'
+2021-11-19 11:08:52,290: pressed'\x03'
+2021-11-19 11:08:52,322: pressed'\x03'
+2021-11-19 11:08:52,354: pressed'\x03'
+2021-11-19 11:08:52,386: pressed'\x03'
+2021-11-19 11:08:52,418: pressed'\x03'
+2021-11-19 11:08:52,450: pressed'\x03'
+2021-11-19 11:08:52,482: pressed'\x03'
+2021-11-19 11:08:52,514: pressed'\x03'
+2021-11-19 11:08:52,546: pressed'\x03'
+2021-11-19 11:08:52,578: pressed'\x03'
+2021-11-19 11:08:52,610: pressed'\x03'
+2021-11-19 11:08:52,642: pressed'\x03'
+2021-11-19 11:08:52,674: pressed'\x03'
+2021-11-19 11:08:52,706: pressed'\x03'
+2021-11-19 11:08:52,738: pressed'\x03'
+2021-11-19 11:08:52,786: pressed'\x03'
+2021-11-19 11:08:52,818: pressed'\x03'
+2021-11-19 11:08:52,850: pressed'\x03'
+2021-11-19 11:08:52,882: pressed'\x03'
+2021-11-19 11:08:52,914: pressed'\x03'
+2021-11-19 11:08:52,946: pressed'\x03'
+2021-11-19 11:08:52,978: pressed'\x03'
+2021-11-19 11:08:53,010: pressed'\x03'
+2021-11-19 11:08:53,042: pressed'\x03'
+2021-11-19 11:08:53,074: pressed'\x03'
+2021-11-19 11:08:53,106: pressed'\x03'
+2021-11-19 11:08:53,138: pressed'\x03'
+2021-11-19 11:08:53,170: pressed'\x03'
+2021-11-19 11:08:53,202: pressed'\x03'
+2021-11-19 11:08:53,234: pressed'\x03'
+2021-11-19 11:08:53,254: released Key.ctrl_l
+2021-11-19 11:08:53,263: released 'c'
+2021-11-19 11:08:53,440: pressedKey.esc
+2021-11-19 11:08:53,491: released Key.esc
+2021-11-19 11:08:53,718: pressedKey.esc
+2021-11-19 11:08:53,811: released Key.esc
+2021-11-19 11:08:54,941: pressed'e'
+2021-11-19 11:08:54,999: released 'e'
+2021-11-19 11:08:55,361: pressed'x'
+2021-11-19 11:08:55,436: released 'x'
+2021-11-19 11:08:55,512: pressed'i'
+2021-11-19 11:08:55,605: released 'i'
+2021-11-19 11:08:55,681: pressed't'
+2021-11-19 11:08:55,749: released 't'
+2021-11-19 11:08:56,152: pressedKey.enter
+2021-11-19 11:08:56,220: released Key.enter
+2021-11-19 11:13:24,319: pressedKey.up
+2021-11-19 11:13:24,395: released Key.up
+2021-11-19 11:13:28,233: pressedKey.down
+2021-11-19 11:13:28,301: released Key.down
+2021-11-19 11:13:29,154: pressedKey.right
+2021-11-19 11:13:29,222: released Key.right
+2021-11-19 11:13:29,883: pressedKey.left
+2021-11-19 11:13:29,959: released Key.left
+2021-11-19 11:13:30,528: pressedKey.up
+2021-11-19 11:13:30,612: released Key.up
+2021-11-19 11:13:31,114: pressedKey.down
+2021-11-19 11:13:31,190: released Key.down
+2021-11-19 11:13:31,601: pressedKey.up
+2021-11-19 11:13:31,652: released Key.up
+2021-11-19 11:13:32,123: pressedKey.down
+2021-11-19 11:13:32,215: released Key.down
+2021-11-19 11:13:32,375: pressedKey.down
+2021-11-19 11:13:32,393: released Key.down
+2021-11-19 11:13:32,612: pressedKey.up
+2021-11-19 11:13:32,663: released Key.up
+2021-11-19 11:13:32,798: pressedKey.down
+2021-11-19 11:13:32,841: released Key.down
+2021-11-19 11:13:33,009: pressedKey.down
+2021-11-19 11:13:33,026: released Key.down
+2021-11-19 11:13:33,169: pressedKey.up
+2021-11-19 11:13:33,229: released Key.up
+2021-11-19 11:13:33,381: pressedKey.down
+2021-11-19 11:13:33,456: released Key.down
+2021-11-19 11:13:33,608: pressedKey.right
+2021-11-19 11:13:33,684: released Key.right
+2021-11-19 11:13:33,794: pressedKey.up
+2021-11-19 11:13:33,879: released Key.up
+2021-11-19 11:13:34,014: pressedKey.left
+2021-11-19 11:13:34,192: pressedKey.right
+2021-11-19 11:13:34,201: released Key.left
+2021-11-19 11:13:34,403: pressedKey.up
+2021-11-19 11:13:34,420: released Key.right
+2021-11-19 11:13:34,588: pressedKey.left
+2021-11-19 11:13:34,614: released Key.up
+2021-11-19 11:13:34,832: released Key.left
+2021-11-19 11:13:34,833: pressedKey.down
+2021-11-19 11:13:34,893: pressedKey.right
+2021-11-19 11:13:35,002: released Key.down
+2021-11-19 11:13:35,121: pressedKey.up
+2021-11-19 11:13:35,180: released Key.right
+2021-11-19 11:13:35,239: pressedKey.left
+2021-11-19 11:13:35,282: released Key.up
+2021-11-19 11:13:35,442: pressedKey.right
+2021-11-19 11:13:35,518: pressedKey.down
+2021-11-19 11:13:35,528: released Key.left
+2021-11-19 11:13:35,629: released Key.right
+2021-11-19 11:13:35,663: pressedKey.left
+2021-11-19 11:13:35,689: released Key.down
+2021-11-19 11:13:35,799: pressedKey.right
+2021-11-19 11:13:35,817: pressedKey.up
+2021-11-19 11:13:35,859: released Key.left
+2021-11-19 11:13:35,877: released Key.right
+2021-11-19 11:13:35,894: pressedKey.left
+2021-11-19 11:13:35,937: released Key.up
+2021-11-19 11:13:36,055: pressedKey.right
+2021-11-19 11:13:36,081: released Key.left
+2021-11-19 11:13:36,182: released Key.right
+2021-11-19 11:13:36,292: pressedKey.left
+2021-11-19 11:13:36,351: released Key.left
+2021-11-19 11:13:36,461: pressedKey.up
+2021-11-19 11:13:36,553: released Key.up
+2021-11-19 11:13:36,663: pressedKey.up
+2021-11-19 11:13:36,706: released Key.up
+2021-11-19 11:13:36,815: pressedKey.down
+2021-11-19 11:13:36,883: released Key.down
+2021-11-19 11:13:36,909: pressedKey.left
+2021-11-19 11:13:36,968: released Key.left
+2021-11-19 11:13:36,995: pressedKey.right
+2021-11-19 11:13:37,012: pressedKey.up
+2021-11-19 11:13:37,071: released Key.right
+2021-11-19 11:13:37,106: pressedKey.left
+2021-11-19 11:13:37,148: released Key.up
+2021-11-19 11:13:37,175: pressedKey.right
+2021-11-19 11:13:37,184: released Key.left
+2021-11-19 11:13:37,302: released Key.right
+2021-11-19 11:13:41,023: pressedKey.ctrl_l
+2021-11-19 11:13:41,241: pressed'\x03'
+2021-11-19 11:13:41,375: released '\x03'
+2021-11-19 11:13:41,426: released Key.ctrl_l
