@@ -1,3 +1,4 @@
+from tkinter.messagebox import QUESTION
 import numpy as np 
 import matplotlib.pyplot as plt 
 import imageio 
@@ -9,14 +10,18 @@ import cv2
 import matplotlib as mb
 import sys
 from numba import jit
+import skimage.measure
+
 
 
 # The coded is transformed into C-code by the use of numba, as it takes less time running it in C than python
 
 # FUNTIONS/METHODS FOR USE IN TASK II
 #-------------------------------------------------------------------------------------------------------------------------------------#
-def DCT8x8(image, Q, q):                                                                                                              #
-    image -= 128 # subtracting 128 from each pixel in the picture, thus lowering the intensity in the picture                         #
+@jit
+def DCT8x8(image, Q):      
+                                                                                                 #
+    image = image - 128 # subtracting 128 from each pixel in the picture, thus lowering the intensity in the picture                         #
     image_DCT = np.zeros((image.shape))                                                                                               #
     for i in range(0, image.shape[0], 8):                                                                                             #
         for j in range(0, image.shape[1], 8):                                                                                         #
@@ -24,26 +29,25 @@ def DCT8x8(image, Q, q):                                                        
             block_F = np.zeros((8,8)) # block for inserting new values                                                                #
             block_x = image[i:i+8, j:j+8].copy()                                                                                      #
                                                                                                                                       #
-            for u in range(0, 8):                                                                                                     #
-                for v in range(0, 8):                                                                                                 #
+            for u in range(8):                                                                                                     #
+                for v in range(8):                                                                                                 #
                                                                                                                                       #
-                    c_u=(1/math.sqrt(2)) if u == 0 else 1                                                                             #
-                    c_v=(1/math.sqrt(2)) if v == 0 else 1                                                                             #
+                    c_u=(1/np.sqrt(2)) if u == 0 else 1                                                                             #
+                    c_v=(1/np.sqrt(2)) if v == 0 else 1                                                                             #
+                                                                                                                                  #
+                    for x in range(8):                                                                                              #
+                        for y in range(8):                                                                                         #
                                                                                                                                       #
-                    for x in range(0,8):                                                                                              #
-                        for y in range(0, 8):                                                                                         #
-                                                                                                                                      #
-                            block_F[u,v] += np.cos((2*x+1)*u*np.pi/16)*np.cos((2*y+1)*v*np.pi/16)*block_x[x,y]                        #
-                                                                                                                                      #
-                    block_F[u,v] *= (0.25)*c_u*c_v                                                                                    #
-            if q != 0:                                                                                                                #
-                block_F = np.around(block_F/(q*Q), 0) # Compression performed by element-wise division by the q*Q                     #
+                            block_F[u,v] += np.cos((((2*x)+1)*u*np.pi)/16)*np.cos((((2*y)+1)*v*np.pi)/16)*block_x[x,y]                        #
+                                                                                                                                                                                                                         #                                                                            #
+                    block_F[u,v] = round(((1/4)*c_u*c_v*block_F[u,v])/Q[u,v]) # Compression performed by element-wise division by the q*Q                     #
                                                                                                                                       #
             image_DCT[i:i+8, j:j+8] = block_F                                                                                         #
     return image_DCT                                                                                                                  #
 #-------------------------------------------------------------------------------------------------------------------------------------#
 @jit                                                                                                                                  # 
-def iDCT8x8(image):                                                                                                                   #
+def iDCT8x8(image, Q):    
+                                                                                                            #
     f_out = np.zeros((image.shape))                                                                                                   #
                                                                                                                                       #
     for i in range(0, image.shape[0], 8):                                                                                             #
@@ -52,17 +56,19 @@ def iDCT8x8(image):                                                             
             block = np.zeros((8,8))                                                                                                   #
             block2 = image[i:i+8, j:j+8].copy()                                                                                       #
                                                                                                                                       #
-            for x in range(0, 8):                                                                                                     #
-                for y in range(0, 8):                                                                                                 #
+            for x in range(8):                                                                                                     #
+                for y in range(8):                                                                                                 #
                                                                                                                                       #
-                    for u in range(0,8):                                                                                              #
-                        for v in range(0, 8):                                                                                         #
+                    for u in range(8):                                                                                              #
+                        for v in range(8):                                                                                         #
                             cu=(1/np.sqrt(2)) if u == 0 else 1                                                                        #
                             cv=(1/np.sqrt(2)) if v == 0 else 1                                                                        #
-                            block[x,y] += np.cos((2*x+1)*u*np.pi/16)*np.cos((2*y+1)*v*np.pi/16)*cu*cv*block2[u,v]                     #
-                    block[x,y] *= 0.25                                                                                                #
-            f_out[i:i+8, j:j+8] =  block                                                                                              #
-    return (f_out)+128                                                                                                                #
+                            block[x,y] += np.cos((((2*x)+1)*u*np.pi)/16)*np.cos((((2*y)+1)*v*np.pi)/16)*cu*cv*block2[u,v]*Q[u,v]    
+                    block[x,y] = round((1/4)*block[x,y])
+            
+                                                                                                                #
+            f_out[i:i+8, j:j+8] = block                                                                                              #
+    return (f_out +128)                                                                                                                #
     # Comment on the output of the method                                                                                             #
 #-------------------------------------------------------------------------------------------------------------------------------------#
     # After performing the division of 8x8-blocks contating the new values in cosiuns domain,                                         #
@@ -71,19 +77,30 @@ def iDCT8x8(image):                                                             
     # but the values returned are integers.                                                                                           #
 #-------------------------------------------------------------------------------------------------------------------------------------#
                                                                                                                                       #
-def calculate_enthropy(image):                                                                                                        #
-    hist = np.zeros((256))                                                                                                            #
-    image = image.clip(0, 255)                                                                                                        #
+def calculate_enthropy(image):  
+    
+    hist = dict()
+                                                                                                          #
     for i in range(image.shape[0]):                                                                                                   #
-        for j in range(image.shape[1]):                                                                                               #
-            hist[int(image[i,j])] += 1                                                                                                #
-    norm_hist = hist/(image.shape[0]*image.shape[1])                                                                                  #
-    enthropy = [norm_hist[i]*np.log2(norm_hist[i]) for i in range(256) if norm_hist[i] != 0]                                          #
-    enthropy = -np.sum(enthropy)                                                                                                      #
-    print(enthropy)       
+        for j in range(image.shape[1]): 
+            if int(image[i,j]) not in hist:         
+                hist[int(image[i,j])] = 1
+            else:                                                                                     #
+                hist[int(image[i,j])] += 1  
+    #print(hist)
+    ent = 0
+    for intensity in hist: 
+        pi = hist[intensity]/image.size
+        ent += pi*np.log2(pi)
+    print(-ent)
+   
+    
+                                                                                                   
     # Due to the fact that a picture cannot be represented by using a decimal number of bits,
-    # the enthropy value is ceiled to the closest integer value.                                                                                                             #
-    return np.ceil(enthropy)                                                                                                          #
+    # the enthropy value is ceiled to the closest integer value.  """
+  
+    entropy = skimage.measure.shannon_entropy(image)                                                                                                       #
+    return round(entropy,3)                                                                                                          #
                                                                                                                                       #
 @jit                                                                                                                                  #
 def calculate_comp_rate(org_image_ent, new_image_ent, image):                                                                         #
@@ -107,7 +124,8 @@ if __name__ == '__main__':                                                      
                     [72, 92, 95, 98, 112, 100, 103, 99]])                                                                             #
                                                                                                                                       #
     image_to_open = imageio.imread(sys.argv[1], as_gray=True)                                                                         #
-    org_ent = calculate_enthropy(image_to_open)                                                                                       #
+    org_ent = calculate_enthropy(image_to_open)   
+                                                                         #
     q = float(sys.argv[2])                                                                                                            #
     # Those two lines of code are commented out, since I perform compression using a values og q from                                 #
     # the array below: q_values.                                                                                                      #
@@ -118,25 +136,26 @@ if __name__ == '__main__':                                                      
     compressed_pictures = []                                                                                                          #
     ent_vals = []                                                                                                                     #
                                                                                                                                       #
-    for i in range(len(q_values)):                                                                                                    #
-        image = DCT8x8(image_to_open, big_q, q_values[i])                                                                             #
-                                                                                                                                      #
-        image2 = iDCT8x8(image)                                                                                                       #
-        compressed_pictures.append(image2)                                                                                            #
-                                                                                                                                      #
-        ent2 = calculate_enthropy(image2)                                                                                             #
+    for i in range(len(q_values)): 
+        Q = big_q*q_values[i]   
+        #print(Q)                                                                                                #
+        image = DCT8x8(image_to_open, Q)                                                                             #
+        ent2 = calculate_enthropy(image)                                                                                                                           #
+        image2 = iDCT8x8(image, Q)                                                                                                       #
+        compressed_pictures.append(image2)                                                                                            #                                                                                                                                      
+                                                                                           #
         ent_vals.append(ent2)                                                                                                         #
                                                                                                                                       #                                                                                #                                                                                                                             #
         cR, mem = calculate_comp_rate(org_ent, ent2, image)                                                                           #
                                                                                                                                       # 
-        print('Compressionrate for compressed image: ', cR)                                                                           #
-        print('Memory needed to store the compressed picture:', mem)                                                                  #
+        print('Compressionrate for compressed image: ')                                                                           #
+        print('Memory needed to store the compressed picture:')                                                                  #
                                                                                                                                       #
-    imageio.imsave('oblig2_oppgave2_bilde1.png', compressed_pictures[0])                                                              #
-    imageio.imsave('oblig2_oppgave2_bilde2.png', compressed_pictures[1])                                                              #
-    imageio.imsave('oblig2_oppgave2_bilde3.png', compressed_pictures[2])                                                              #
-    imageio.imsave('oblig2_oppgave2_bilde4.png', compressed_pictures[3])                                                              #
-    imageio.imsave('oblig2_oppgave2_bilde5.png', compressed_pictures[4])                                                              #
+    #imageio.imsave('oblig2_oppgave2_bilde1.png', compressed_pictures[0])                                                              #
+    #imageio.imsave('oblig2_oppgave2_bilde2.png', compressed_pictures[1])                                                              #
+    #imageio.imsave('oblig2_oppgave2_bilde3.png', compressed_pictures[2])                                                              #
+    #imageio.imsave('oblig2_oppgave2_bilde4.png', compressed_pictures[3])                                                              #
+    #imageio.imsave('oblig2_oppgave2_bilde5.png', compressed_pictures[4])                                                              #
                                                                                                                                       #
                                                                                                                                       #
     fig, ax = plt.subplots(2,3)                                                                                                       #
@@ -154,7 +173,8 @@ if __name__ == '__main__':                                                      
     ax[1][0].title.set_text(f'Compressed image, q = {q_values[2]}, H={ent_vals[2]}')                                                  #
     ax[1][1].title.set_text(f'Compressed image, q = {q_values[3]}, H={ent_vals[3]}')                                                  #
     ax[1][2].title.set_text(f'Compressed image, q = {q_values[4]}, H={ent_vals[4]}')                                                  #
-                                                                                                                                      #
+                                                                                        
+                                      #
     plt.show()                                                                                                                        #
 #-------------------------------------------------------------------------------------------------------------------------------------#
 # DRØFTING AV KOMPRIMERINGEN:      
